@@ -1,22 +1,13 @@
-<html>
-    <head>
-        <title>CHOI's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">CHOI's Blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <div>
-            <p>published: 29.12.2017, 22:13</p>
-            <h2><a href="">PUBG JOT GOSU</a></h2>
-            <p>The Cronicle of Pubg Gosu CHOI</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 29.12.2017, 22:13</p>
-            <h2><a href="">MAPLE LOVER</a></h2>
-            <p>But he plays Maplestory, too.</p>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
