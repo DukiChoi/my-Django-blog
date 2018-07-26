@@ -1,10 +1,10 @@
-{% load staticfiles %} 
+{% load staticfiles %}
 <html>
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-	
+
         <title>CHOI's blog</title>
     <body>
 
@@ -13,7 +13,7 @@
     	         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 		 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
 	    	 <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-  
+
 	    {% else %}
 		<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
 	    {% endif %}
@@ -23,13 +23,16 @@
         <div>
             <h2><a href="">PUBG JOT GOSU</a></h2>
             <p>The Cronicle of Pubg Gosu CHOI</p>
-            <img src=¡±{% static ¡®pubg.jpg¡¯ %}¡± />
+            <a href="{% static 'img/pubg.jpg' %}"><img src="{% static 'img/pubg.jpg' %}" width="600" height="450">
+
         </div>
 
 
         <div>
             <h2><a href="">MAPLE LOVER</a></h2>
-            <p>But he plays Maplestory, too.<br><br><br><br><br></p>
+            <p>But he plays Maplestory, too.</p>
+            <a href="{% static 'img/maple.jpg' %}"><img src="{% static 'img/maple.jpg' %}" width="496" height="448">
+            <br><br><br><br><br>
         </div>
 
 
@@ -50,4 +53,3 @@
         </div>
     </body>
 </html>
-
